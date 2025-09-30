@@ -1,0 +1,46 @@
+{
+  "name": "vote-api",
+  "version": "1.0.0",
+  "description": "Vote for best ideas",
+  "license": "ISC",
+  "author": "Ksenia Krasnikova",
+  "type": "module",
+  "main": "app.ts",
+  "scripts": {
+    "build": "npx tsc && tsc-alias",
+    "start": "npx tsx src/app.js",
+    "dev": "npx tsx watch src/app.ts",
+    "lint": "eslint 'src/**/*.{ts,js}'",
+    "lint:fix": "eslint 'src/**/*.{ts,js}' --fix"
+  },
+  "dependencies": {
+    "@koa/cors": "^5.0.0",
+    "@koa/router": "^14.0.0",
+    "dotenv": "^17.2.2",
+    "koa": "^3.0.1",
+    "koa-bodyparser": "^4.4.1",
+    "koa-mount": "^4.2.0",
+    "mysql2": "^3.15.1",
+    "tsc-alias": "^1.8.16",
+    "zod": "^4.1.11"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/koa": "^3.0.0",
+    "@types/koa__cors": "^5.0.0",
+    "@types/koa__router": "^12.0.4",
+    "@types/koa-bodyparser": "^4.3.12",
+    "@types/koa-mount": "^4.0.5",
+    "@types/mysql": "^2.15.27",
+    "@types/node": "^24.5.2",
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
+    "@typescript-eslint/parser": "^8.45.0",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
