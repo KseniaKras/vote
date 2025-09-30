@@ -62,7 +62,7 @@ export const IdeasList = () => {
 
   return (
     <Container>
-      <Heading as="h3" color="indigo" align="center" weight="bold" size="7" mb="5">Ideas List:</Heading>
+      <Heading as="h3" color="indigo" align="center" weight="bold" size="7" mb="5">Список идей:</Heading>
 
       {isListLoading && !ideas.length
         ? <Flex align="center" justify="center" height="100dvh">
