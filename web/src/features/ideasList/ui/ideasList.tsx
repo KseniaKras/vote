@@ -41,11 +41,7 @@ export const IdeasList = () => {
 
       if (res.success) {
         console.log('data', res.list)
-        setIdeas(
-          res.list
-          // prev => prev.map(idea => idea.id === id ? {...idea, votes: idea.votes + 1} : idea)
-            // .sort((a, b) => b.votes - a.votes)
-        )
+        setIdeas(res.list)
 
         snowNotification(NotificationType.Success, 'Ваш голос успешно добавлен')
       }
