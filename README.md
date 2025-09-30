@@ -70,7 +70,7 @@ MySQL (запуск и заполнение вручную)
 1. mysql -u root -p
 (пароль, если нужен)
 
-Создание юзера с правами доступа и таблицы:
+Создание юзера с правами доступа и базы:
 CREATE DATABASE my_db;
 CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON my_db.* TO 'user'@'localhost';
@@ -85,4 +85,4 @@ EXIT
 password: password
 ```
 
-таблица должна быть успешно создана
+База с заполненными таблицами должна быть успешно создана
