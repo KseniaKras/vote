@@ -2,7 +2,7 @@ import type { PoolConnection } from 'mysql2/promise'
 import { dbService } from 'db'
 
 export const getList = async () => {
-  return dbService.query('SELECT id, title, description, votes FROM ideas')
+  return dbService.query('SELECT id, title, description, votes FROM ideas ORDER BY votes DESC')
 }
 
 export const incrementIdeaVotes = async (

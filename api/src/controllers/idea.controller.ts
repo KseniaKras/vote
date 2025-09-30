@@ -6,7 +6,7 @@ import { getClientIp } from 'utils/getClientIP'
 const getIdeas = async (ctx: AppKoaContext) => {
   const ideaList = await ideaService.getIdeas()
 
-  ctx.body = ideaList
+  ctx.body = { list: ideaList }
 }
 
 interface IAddVoteBody {
@@ -21,9 +21,15 @@ const addVote = async (ctx: AppKoaContext<IAddVoteBody>) => {
   }
 
   const ip = getClientIp(ctx)
-  const result = await ideaService.addVote(ideaId, ip)
+  
+  await ideaService.addVote(ideaId, ip)
 
-  ctx.body = result
+  const updatedIdeas = await ideaService.getIdeas()
+
+  ctx.body = {
+    success: true,
+    list: updatedIdeas,
+  }
 }
 
 export default {

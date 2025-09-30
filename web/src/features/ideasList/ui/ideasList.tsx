@@ -17,8 +17,8 @@ export const IdeasList = () => {
   const getIdeas = async () => {
     try {
       setIsListLoading(true)
-      const list = await ideasApi.getIdeas()
-      setIdeas(list)
+      const data = await ideasApi.getIdeas()
+      setIdeas(data.list)
     } catch(error) {
       snowNotification(NotificationType.Error, 'Что-то пошло не так...')
     } finally {
@@ -40,9 +40,11 @@ export const IdeasList = () => {
       const res = await ideasApi.addVote(id);
 
       if (res.success) {
+        console.log('data', res.list)
         setIdeas(
-          prev => prev.map(idea => idea.id === id ? {...idea, votes: idea.votes + 1} : idea)
-            .sort((a, b) => b.votes - a.votes)
+          res.list
+          // prev => prev.map(idea => idea.id === id ? {...idea, votes: idea.votes + 1} : idea)
+            // .sort((a, b) => b.votes - a.votes)
         )
 
         snowNotification(NotificationType.Success, 'Ваш голос успешно добавлен')
